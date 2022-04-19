@@ -1,0 +1,32 @@
+<ion-tabs #tabs (ionTabsDidChange)="setCurrentTab($event)">
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="home">
+      <ion-icon [name]="selectTab=='home' ? 'home' : 'home-outline'">
+      </ion-icon>
+    </ion-tab-button>
+
+    <ion-tab-button tab="toDo">
+      <ion-icon [name]="clipboard">
+      </ion-icon>
+    </ion-tab-button>
+
+    <ion-tab-button tab="calendar">
+      <ion-icon [name]="calendar">
+      </ion-icon>
+    </ion-tab-button>
+
+    <ion-tab-button tab="timer">
+      <ion-icon [name]="hourglass">
+      </ion-icon>
+    </ion-tab-button>
+
+    <ion-tab-button tab="pomodoro">
+      <ion-icon [name]="time">
+      </ion-icon>
+    </ion-tab-button>
+    <ion-tab-button tab="quote">
+      <ion-icon [name]="bookmarks">
+      </ion-icon>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>
