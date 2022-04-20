@@ -1,0 +1,104 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>sign-up</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+</ion-content>
+<ion-content>
+  <div class="center">
+      <form [formGroup]="ionicForm" (ngSubmit)="onSubmit()" novalidate >
+        <div  id="signupLabel">
+        <ion-label><strong>Create Your Account</strong></ion-label>
+      </div>
+      <ion-item class="rounded">
+        <ion-label class="inlabel" position="stacked">First Name</ion-label>
+        <ion-input   type="name" formControlName="FirstName"></ion-input>
+      </ion-item>
+      <div class="errorLabel">
+      <ion-label *ngIf="isSubmitted && errorControl.FirstName.errors?.required">
+        First Name is required.
+      </ion-label>
+    </div>
+      <div class="errorLabel">
+      <ion-label *ngIf="isSubmitted && errorControl.FirstName.errors?.pattern">
+        First Name should not contains spaces or numbers with a minimum length of 2.
+      </ion-label>
+      </div>
+      <div class="errorLabel">
+      <ion-label *ngIf="isSubmitted && errorControl.FirstName.errors?.maxlength">
+        First Name should not contain more than 30 characters.
+      </ion-label>
+    </div>
+      <ion-item class="rounded">
+        <ion-label class="inlabel" position="stacked">Last Name</ion-label>
+        <ion-input   type="name" formControlName="LastName"></ion-input>
+      </ion-item>
+      <div class="errorLabel">
+      <ion-label *ngIf="isSubmitted && errorControl.LastName.errors?.required">
+        Last Name is required.
+      </ion-label>
+    </div>
+    <div class="errorLabel">
+      <ion-label *ngIf="isSubmitted && errorControl.LastName.errors?.pattern">
+        Last Name should not contain spaces or numbers with a minimum length of 2.
+      </ion-label>
+    </div>
+    <div class="errorLabel">
+      <ion-label *ngIf="isSubmitted && errorControl.LastName.errors?.maxlength">
+        Last Name should not contain more than 30 characters.
+      </ion-label>
+    </div>
+      <ion-item class="rounded">
+        <ion-label class="inlabel" position="stacked">Phone Number</ion-label>
+        <ion-input   type="number" formControlName="PhoneNumber"></ion-input>
+      </ion-item>
+      <div class="errorLabel">
+      <ion-label *ngIf="isSubmitted && errorControl.PhoneNumber.errors?.required">
+        Phone Number is required.
+      </ion-label>
+    </div>
+      <ion-item  class="rounded">
+        <ion-label class="inlabel" position="stacked">Email</ion-label>
+        <ion-input type="Email" formControlName="Email"></ion-input>
+      </ion-item>
+      <div class="errorLabel">
+      <ion-label *ngIf="isSubmitted && errorControl.Email.errors?.required">
+        Email is required.
+      </ion-label>
+    </div>
+    <div class="errorLabel">
+      <ion-label *ngIf="isSubmitted && errorControl.Email.errors?.pattern">
+        Email is not in the correct format.
+      </ion-label>
+    </div>
+      <ion-item  class="rounded">
+        <ion-label class="inlabel" position="stacked">Password</ion-label>
+        <ion-input type="Password" formControlName="Password"></ion-input>
+      </ion-item>
+      <div class="errorLabel">
+      <ion-label *ngIf="isSubmitted && errorControl.Password.errors?.required">
+        Password is required.
+      </ion-label>
+    </div>
+    <div class="errorLabel">
+      <ion-label *ngIf="isSubmitted && errorControl.Password.errors?.pattern">
+        Password should contain at least one uppercase letter, one lowercase letter, and one number and one special character.
+      </ion-label>
+    </div>
+    <div class="errorLabel">
+      <ion-label *ngIf="isSubmitted && errorControl.Password.errors?.minlength">
+        Password should be at least 8 characters long.
+      </ion-label>
+    </div>
+      <ion-button class="roundedMore" expand="block" color="new" type="submit"><strong>Sign up</strong></ion-button>
+      <div class="signup">
+      <strong>Already have an account? </strong>
+      <ion-button class="roundedMore"  color="new" (click)="login()"><strong>Log in</strong></ion-button>
+    </div>
+  </form>
+</div>
+
+</ion-content>

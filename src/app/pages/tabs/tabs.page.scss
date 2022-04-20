@@ -1,0 +1,13 @@
+ion-tabs {
+    ion-tab-bar{
+        border-radius: 10px;
+        ion-tab-button{
+            --color: var(--ion-color-medium);
+            --color-selected: var(--ion-color-purple);
+        
+      
+        }
+
+    }
+
+}

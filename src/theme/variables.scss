@@ -3,6 +3,15 @@
 
 /** Ionic CSS Variables **/
 :root {
+
+
+  --ion-color-purple: #7f4ba3  ;
+	--ion-color-purple-rgb: 105,187,123;
+	--ion-color-purple-contrast: #000000;
+	--ion-color-purple-contrast-rgb: 0,0,0;
+	--ion-color-purple-shade: #9a5ca5;
+	--ion-color-purple-tint: #804d8b;
+
   /** primary **/
   --ion-color-primary: #3880ff;
   --ion-color-primary-rgb: 56, 128, 255;
@@ -74,6 +83,17 @@
   --ion-color-light-contrast-rgb: 0, 0, 0;
   --ion-color-light-shade: #d7d8da;
   --ion-color-light-tint: #f5f6f9;
+}
+
+
+
+.ion-color-new {
+	--ion-color-base: var(--ion-color-purple);
+	--ion-color-base-rgb: var(--ion-color-purple-rgb);
+	--ion-color-contrast: var(--ion-color-purple-contrast);
+	--ion-color-contrast-rgb: var(--ion-color-purple-contrast-rgb);
+	--ion-color-shade: var(--ion-color-purple-shade);
+	--ion-color-tint: var(--ion-color-purple-tint);
 }
 
 @media (prefers-color-scheme: dark) {
