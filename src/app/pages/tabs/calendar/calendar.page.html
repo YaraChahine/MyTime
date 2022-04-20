@@ -1,9 +1,21 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>calendar</ion-title>
+    <ion-title>song</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
 
+
+  <div class="flex">
+    <p class="title">Song of the day</p>
+    <p class="date">{{date}}</p>
+
+
+
+    <p class="song">"{{random_song.song}}"
+    </p>
+    <p class="song">-{{random_song.song_singer}}-</p>
+    <a>{{random_song.song_link}}</a>
+  </div>
 </ion-content>
