@@ -18,7 +18,6 @@ export class ToDoPage implements OnInit {
 
     this.getUserInfo();
     this.getTasks();
-    this.getapi("https://zenquotes.io/api/quotes/");
 
     }
 
@@ -74,15 +73,5 @@ export class ToDoPage implements OnInit {
   }
 
     
-  async  getapi(url)
-  {
-    const response = await fetch(url);
-    var data = await response.json();
-    console.log(data);
-  }
-
-
-
-
 
 }

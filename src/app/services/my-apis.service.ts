@@ -54,4 +54,14 @@ export class MyAPIsService {
 
   }
 
+  getQuotesNumber(){
+    return this.http.get(this.url + 'getQuotesNumber.php');
+
+  }
+
+
+  getRandomQuote(id){
+    return this.http.get(this.url + 'getRandomQuote.php?id='+id);
+
+  }
 }
