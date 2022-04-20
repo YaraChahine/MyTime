@@ -5,7 +5,7 @@
 :root {
 
 
-  --ion-color-purple: #7f4ba3  ;
+  --ion-color-purple: #8b62a9  ;
 	--ion-color-purple-rgb: 105,187,123;
 	--ion-color-purple-contrast: #000000;
 	--ion-color-purple-contrast-rgb: 0,0,0;
@@ -83,6 +83,10 @@
   --ion-color-light-contrast-rgb: 0, 0, 0;
   --ion-color-light-shade: #d7d8da;
   --ion-color-light-tint: #f5f6f9;
+
+
+  --ion-font-family: 'Raleway';
+
 }
 
 
@@ -96,6 +100,13 @@
 	--ion-color-tint: var(--ion-color-purple-tint);
 }
 
+
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: normal;
+  src: url('../assets/fonts/Raleway-VariableFont_wght.ttf');
+}
 @media (prefers-color-scheme: dark) {
   /*
    * Dark Colors

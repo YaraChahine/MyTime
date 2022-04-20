@@ -7,22 +7,11 @@ export interface User{
   FirstName: string;
   LastName: string;
   Email: string;
-  PhoneNumber: string;
   Password: string;
 }
 
 
 
-export interface Item{
-
-  item_name: string;
-  item_image: string;
-  item_category_name: string;
-  item_subcategory_name: string;
-  item_description: string;
-  item_type: string;
-  item_price:any;
-}
 @Injectable({
   providedIn: 'root'
 })
@@ -30,7 +19,7 @@ export class MyAPIsService {
 
 
 
-  private url = 'http://localhost/capstone_apis/';
+  private url = 'http://localhost/mobile_apis/';
 
   constructor(private http: HttpClient) {
 

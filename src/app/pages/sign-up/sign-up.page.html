@@ -5,13 +5,10 @@
 </ion-header>
 
 <ion-content>
-
-</ion-content>
-<ion-content>
   <div class="center">
       <form [formGroup]="ionicForm" (ngSubmit)="onSubmit()" novalidate >
         <div  id="signupLabel">
-        <ion-label><strong>Create Your Account</strong></ion-label>
+        <ion-label><strong>Sign Up</strong></ion-label>
       </div>
       <ion-item class="rounded">
         <ion-label class="inlabel" position="stacked">First Name</ion-label>
@@ -51,15 +48,7 @@
         Last Name should not contain more than 30 characters.
       </ion-label>
     </div>
-      <ion-item class="rounded">
-        <ion-label class="inlabel" position="stacked">Phone Number</ion-label>
-        <ion-input   type="number" formControlName="PhoneNumber"></ion-input>
-      </ion-item>
-      <div class="errorLabel">
-      <ion-label *ngIf="isSubmitted && errorControl.PhoneNumber.errors?.required">
-        Phone Number is required.
-      </ion-label>
-    </div>
+   
       <ion-item  class="rounded">
         <ion-label class="inlabel" position="stacked">Email</ion-label>
         <ion-input type="Email" formControlName="Email"></ion-input>

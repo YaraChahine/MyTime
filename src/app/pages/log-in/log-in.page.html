@@ -1,9 +1,40 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>log-in</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
+  <div class="center">
+      <form [formGroup]="ionicForm" (ngSubmit)="onSubmit()" novalidate >
+        <div  id="loginLabel">
+        <ion-label><strong>Login</strong></ion-label>
+      </div>
+      <ion-item class="rounded">
+        <ion-label class="inlabel" position="stacked" >Email</ion-label>
+        <ion-input formControlName="Email" type="Email" ></ion-input>
+
+      </ion-item>
+      <div class="errorLabel">
+      <ion-label *ngIf="isSubmitted && errorControl.Email.errors?.required">
+        Email is required.
+      </ion-label>
+      </div>
+      <div class="errorLabel">
+      <ion-label *ngIf="isSubmitted && errorControl.Email.errors?.pattern">
+        Email is not in the correct format.
+      </ion-label>
+    </div>
+      <ion-item  class="rounded">
+        <ion-label class="inlabel" position="stacked">Password</ion-label>
+        <ion-input  type="Password"  formControlName="Password"></ion-input>
+      </ion-item>
+      <div class="errorLabel">
+      <ion-label *ngIf="isSubmitted && errorControl.Password.errors?.required">
+        Password is required.
+      </ion-label>
+    </div>
+      <br>
+      <ion-button class="roundedMore" expand="block" color="new" type="submit"  ><p style="color: white;">Login</p></ion-button>
+      <div class="signup">
+      <strong>Don't have an account? <a (click)="signup()" class="anchor">Sign up!</a> </strong>
+      <!-- <ion-button class="roundedMore"  color="new" (click)="signup()"><strong>Sign up</strong></ion-button> -->
+    </div>
+  </form>
+</div>
 
 </ion-content>

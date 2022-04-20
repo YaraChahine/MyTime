@@ -1,57 +1,75 @@
+ion-content {
+  --background: none;
+  background-image: url('./../../../assets/imgs/loginbg.png');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .center{
-    height: 90%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  #signupLabel{
-    text-align: center;
-    margin-bottom: 20%;
-    margin-top: 50%;
-    font-size: larger;
-  }
-  .errorLabel{
-    color: red;
-    font-size: 0.8rem;
-    margin-left: 10%;
-    margin-right: 10%;
-  
-  }
-  .inlabel {
-    color :  #aaaaaa;
-  }
-  #loginLabel{
-    text-align: center;
-    margin-bottom: 30%;
-    font-size: 30px;
-  }
-  .rounded{
-    height: 50px;
-    padding-bottom:30px;
-    padding-right: 15px;
-    border-radius: 20px;
-     // border: 2px solid #e4f1d2;
-      margin-left: 5%;
-      margin-right: 5%;
-      margin-bottom: 9px;
-      box-shadow: 2px 2px 2px rgb(226, 210, 210);
-  }
-  // .rounded{
-  //   border-radius: 25px;
-  //   border: 2px solid #e4f1d2;
-  //   margin-left: 5%;
-  //   margin-right: 5%;
-  // }
-  
-  .roundedMore{
-    border-radius: 50%;
+  width: 90%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20%;
+  margin-bottom: 30%;
+  padding-top: 2px;
+  padding-bottom: 10px;
+
+  background-color: rgba(255, 255, 255, 0.56);
+  ;
+  box-shadow: 2px 2px 2px rgb(226, 210, 210);
+
+}
+#signupLabel{
+  text-align: center;
+  margin-bottom: 20%;
+  margin-top: 10%;
+  font-size: larger;
+}
+.errorLabel{
+  color: red;
+  font-size: 0.8rem;
+  margin-left: 10%;
+  margin-right: 10%;
+
+}
+.inlabel {
+  color :  #aaaaaa;
+}
+#loginLabel{
+  text-align: center;
+  margin-bottom: 30%;
+  font-size: 30px;
+}
+.rounded{
+  height: 50px;
+  padding-bottom:30px;
+  padding-right: 15px;
+  border-radius: 20px;
+  background-color: white;
+   // border: 2px solid #e4f1d2;
     margin-left: 5%;
     margin-right: 5%;
-    margin-top: 20px;
-  }
-  .signup{
-    margin-top: 10%;
-    text-align: center;
-  
-  }
-  
+    margin-bottom: 9px;
+    box-shadow: 2px 2px 2px rgb(226, 210, 210);
+}
+// .rounded{
+//   border-radius: 25px;
+//   border: 2px solid #e4f1d2;
+//   margin-left: 5%;
+//   margin-right: 5%;
+// }
+
+.roundedMore{
+  border-radius: 50%;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 20px;
+}
+.signup{
+  margin-top: 10%;
+  text-align: center;
+
+}
