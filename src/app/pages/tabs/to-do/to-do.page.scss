@@ -1,0 +1,46 @@
+ion-content {
+    --background: none;
+    background-image: url('./../../../../assets/imgs/gradientbg.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+
+  .center{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10%;
+
+  }
+
+
+  .t1{
+      color:white;
+      font-size: 30px;
+  }
+
+  .t2{
+    color: var(--ion-color-purple);
+    font-weight: 900;
+    text-shadow: 2px 2px gray;
+
+  }
+
+  .rounded{
+    height: 40px;
+    padding-bottom:30px;
+    padding-right: 15px;
+    border-radius: 10px;
+    background-color: white;
+
+     // border: 2px solid #e4f1d2;
+      margin-left: 11%;
+      margin-right: 25%;
+      margin-bottom: 5px;
+      margin-top: 5px;
+
+  }
