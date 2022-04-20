@@ -26,7 +26,7 @@
     <ion-card-header>
 
       <ion-label>{{task.task_item}}</ion-label>
-      <ion-button style="margin-left: 80%;margin-top: -40px;"  (click)="deleteTask({{task.task_id}})" fill="clear" color="new">
+      <ion-button style="margin-left: 80%;margin-top: -40px;"  (click)="deleteTask(task.task_id)" fill="clear" color="new">
         <ion-icon slot="icon-only" name="checkbox-outline"></ion-icon>
       </ion-button>
     

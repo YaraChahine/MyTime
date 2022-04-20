@@ -18,10 +18,13 @@ export class ToDoPage implements OnInit {
 
     this.getUserInfo();
     this.getTasks();
+    this.getapi("https://zenquotes.io/api/quotes/");
+
     }
 
 
 
+    
   
   addTask(){
     this.service.addTask(localStorage.getItem("logged-in-user-id"),this.task).subscribe((res:any)=>{
@@ -35,12 +38,26 @@ export class ToDoPage implements OnInit {
 
 
 
+
+
   getTasks(){
     this.service.getTasks(localStorage.getItem("logged-in-user-id")).subscribe((res:any)=>{
       this.tasks=res;
       console.log("SUCCESS get task");
     },(error:any)=>{
       console.log("Error get task");
+    })
+  }
+
+
+  deleteTask(id){
+    this.service.deleteTask(id).subscribe((res:any)=>{
+      
+      console.log("SUCCESS delete task");
+      this.getTasks();
+
+    },(error:any)=>{
+      console.log("Error delete task");
     })
   }
 
@@ -55,6 +72,17 @@ export class ToDoPage implements OnInit {
       console.log("Error");
     })
   }
+
+    
+  async  getapi(url)
+  {
+    const response = await fetch(url);
+    var data = await response.json();
+    console.log(data);
+  }
+
+
+
 
 
 }
