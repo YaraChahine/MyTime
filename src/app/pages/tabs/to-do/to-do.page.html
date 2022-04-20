@@ -7,12 +7,38 @@
 <ion-content>
   <div class="center">
     <p class="t1">Your <span ><strong class="t2">To-Do List</strong></span></p>
+
+
+<div class="flex-horizontal">
+  <ion-item class="rounded">
+    <ion-input  [(ngModel)]="task"type="text" placeholder="Add a task..." ></ion-input>
+    
+  </ion-item>
+  <ion-button class="add-button" (click)="addTask()" fill="clear" color="new">
+    <ion-icon slot="icon-only" name="add-circle-outline"></ion-icon>
+  </ion-button>
+</div>
+
+
+
+<div  style="width:100%;" *ngFor="let task of tasks">
+  <ion-card>
+    <ion-card-header>
+
+      <ion-label>{{task.task_item}}</ion-label>
+      <ion-button style="margin-left: 80%;margin-top: -40px;"  (click)="deleteTask({{task.task_id}})" fill="clear" color="new">
+        <ion-icon slot="icon-only" name="checkbox-outline"></ion-icon>
+      </ion-button>
+    
+ 
+    </ion-card-header>
+  
+    </ion-card>
   </div>
 
 
 
-  <ion-item class="rounded">
-    <ion-input  type="text" aria-placeholder="Add a task..." ></ion-input>
+  
+</div>
 
-  </ion-item>
 </ion-content>

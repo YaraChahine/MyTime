@@ -32,4 +32,21 @@ export class MyAPIsService {
   }
 
 
+  getUserInfo(email : string) {
+    return this.http.get(this.url + 'getUserInfo.php?email='+email);
+
+  }
+
+
+  addTask(id : any, task : string) {
+    return this.http.get(this.url + 'addTask.php?id='+id+'&task='+task);
+
+  }
+
+  
+  getTasks(id : any) {
+    return this.http.get(this.url + 'getTasks.php?id='+id);
+
+  }
+
 }

@@ -11,12 +11,22 @@ ion-content {
     width: 90%;
     margin: auto;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     margin-top: 10%;
 
   }
+  .flex-horizontal{
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10%;
 
+  }
 
   .t1{
       color:white;
@@ -32,15 +42,44 @@ ion-content {
 
   .rounded{
     height: 40px;
+    width : 100%;
     padding-bottom:30px;
     padding-right: 15px;
     border-radius: 10px;
     background-color: white;
+    margin-left: 20px;
 
      // border: 2px solid #e4f1d2;
-      margin-left: 11%;
-      margin-right: 25%;
+  
       margin-bottom: 5px;
       margin-top: 5px;
 
   }
+
+  .add-button {
+      margin-bottom:7px;
+      font-size: 22px;
+ 
+  }
+
+
+  ion-card {
+      width: 90%;
+      margin-bottom: -13px;
+      height:10px;
+      padding-bottom: 19%;
+      padding-top: -15%;
+    background-color: rgba($color: white, $alpha: 0.3);
+    box-shadow: 2px 2px 2px rgb(155, 155, 155);
+
+
+
+    ion-label {
+        margin-left: 10px;
+    }
+ 
+  
+
+  }
+
+ 

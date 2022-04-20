@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MyAPIsService } from 'src/app/services/my-apis.service';
 
 @Component({
   selector: 'app-to-do',
@@ -7,9 +8,53 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ToDoPage implements OnInit {
 
-  constructor() { }
+  constructor(public service: MyAPIsService) { }
 
+
+  user :any = [];
+  task : string;
+  tasks: any =[]
   ngOnInit() {
+
+    this.getUserInfo();
+    this.getTasks();
+    }
+
+
+
+  
+  addTask(){
+    this.service.addTask(localStorage.getItem("logged-in-user-id"),this.task).subscribe((res:any)=>{
+      console.log("SUCCESS task");
+      this.getTasks();
+    },(error:any)=>{
+      console.log("Error task");
+    })
   }
+
+
+
+
+  getTasks(){
+    this.service.getTasks(localStorage.getItem("logged-in-user-id")).subscribe((res:any)=>{
+      this.tasks=res;
+      console.log("SUCCESS get task");
+    },(error:any)=>{
+      console.log("Error get task");
+    })
+  }
+
+  getUserInfo(){
+    this.service.getUserInfo(localStorage.getItem("logged-in-email")).subscribe((res:any)=>{
+
+      this.user=res;
+      localStorage.setItem("logged-in-user-id",this.user.user_id);
+
+      console.log("SUCCESS");
+    },(error:any)=>{
+      console.log("Error");
+    })
+  }
+
 
 }
