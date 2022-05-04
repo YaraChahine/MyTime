@@ -6,22 +6,38 @@
 
 <ion-content>
   <div class="center">
-    <p class="t1">Your <span ><strong class="t2">Timer</strong></span></p>
+    <p class="t1">Your <span><strong class="t2">Timer</strong></span></p>
 
 
-    <input [(ngModel)]="hours" type="number" min="0" max="60">
-    <input [(ngModel)]="minutes"  type="number"  min="0" max="60">
-    <input [(ngModel)]="seconds"  type="number" min="0" max="60">
-<br><br>
+    <div class="flexbox">
+      <input [(ngModel)]="hours" type="number" min="0" max="60" class="flex-item">
+      <input [(ngModel)]="minutes" type="number" min="0" max="60" class="flex-item">
+      <input [(ngModel)]="seconds" type="number" min="0" max="60" class="flex-item">
 
-    <button (click)="startTimer()">start</button>
-    <button (click)="pause()">pause</button>
-    <button (click)="resume()">resume</button>
+    </div>
+    <br><br>
 
 
-<br><br>
-    <input type="text">
-    <p >{{timer()}}</p>
-</div>
+    <p class="time">{{timer()}}</p>
+
+
+    <div class="flexbox2">
+      <ion-button color="new" class="flex-item2" (click)="startTimer()">
+      <span>Play</span>
+      </ion-button>
+
+      <div *ngIf="paused===false">
+        <ion-button color="new" class="flex-item2" (click)="pause()">
+          <span>Pause</span>
+        </ion-button>
+      </div>
+      <div *ngIf="paused===true">
+        <ion-button color="new" class="flex-item2" (click)="resume()">
+          <span>Resume</span>
+        </ion-button>
+      </div>
+
+    </div>
+  </div>
 
 </ion-content>

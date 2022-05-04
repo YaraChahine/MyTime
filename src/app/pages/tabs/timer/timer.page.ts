@@ -17,11 +17,12 @@ export class TimerPage implements OnInit {
    hrs    :any; 
    mins   :any; 
    time   :any; 
+   paused: Boolean;
    public demo   :any=0;
    t:any;
  
    
-  constructor(public  toastController: ToastController) { this.time=0;}
+  constructor(public  toastController: ToastController) { this.time=0; this.paused=false;}
 
   ngOnInit() {
   
@@ -98,7 +99,7 @@ console.log(this.myElement);
         clearInterval(t);
     }
 }
-var currentTime= hours + "h" +minutes +"m"+seconds+"s";
+var currentTime= hours + ":" +minutes +":"+seconds+"";
 return currentTime;}
 catch(err){
   console.log("oups");
@@ -192,9 +193,11 @@ console.log(this.myElement);
 
  pause(){
   clearInterval(this.t);
+  this.paused=true;
 }
  resume(){
   clearInterval(this.t);
+  this.paused=false;
   this.t= setInterval(() => {this.updateTime();},1000);
 
   // this.t=setInterval(updateCountdown, 1000);
