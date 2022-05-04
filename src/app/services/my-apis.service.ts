@@ -64,4 +64,17 @@ export class MyAPIsService {
     return this.http.get(this.url + 'getRandomQuote.php?id='+id);
 
   }
+
+
+  
+  getSongsNumber(){
+    return this.http.get(this.url + 'getSongsNumber.php');
+
+  }
+
+
+  getRandomSong(id){
+    return this.http.get(this.url + 'getRandomSong.php?id='+id);
+
+  }
 }
