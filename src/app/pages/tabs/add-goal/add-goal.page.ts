@@ -16,6 +16,12 @@ export class AddGoalPage implements OnInit {
 
   constructor(private modalCtrl: ModalController,public formBuilder: FormBuilder,public  toastController: ToastController,public service: MyAPIsService) { }
 
+
+  //the user can use this page to add goals, after entering the goal's title, goal's deadlines, and the goal's milestones.
+
+
+
+
   ngOnInit() {
     this.ionicForm = this.formBuilder.group({
       goal_title: [ ""],
@@ -34,6 +40,7 @@ export class AddGoalPage implements OnInit {
 
 
 
+  //the following is to know how many milestones the user wishes to input in the form
   selectedType($event){
     var i;
      for (i=0;i<$event.target.value;i++){
@@ -44,6 +51,9 @@ export class AddGoalPage implements OnInit {
 
      onSubmit(){
 
+
+      //When the user usbmits the add goal form, we call the addGoal api giving it as parameter
+      //the form's values and we print to the console the result on both success and failure.
   
       const goal=this.ionicForm.value;
       console.log(goal);
