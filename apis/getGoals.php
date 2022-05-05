@@ -10,7 +10,9 @@ $data = json_decode(file_get_contents("php://input"));
 
 $id = $_GET["id"];
 
-
+//we get the logged in user's id from the front end
+//then we retrieve all the goals entered by that user
+//and return them to the front end
 $query = "SELECT * FROM goals WHERE user_id = ?";
 $stmt = $connection->prepare($query);
 $stmt->bind_param("i", $id);

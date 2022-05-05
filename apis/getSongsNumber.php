@@ -10,6 +10,8 @@ $data = json_decode(file_get_contents("php://input"));
 
 
 
+//this api simply returns the number of song entries in the songs table and returns it
+//to the front end
 $query = "SELECT count(*) FROM songs;";
 $stmt = $connection->prepare($query);
 $stmt->execute();

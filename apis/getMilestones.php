@@ -12,21 +12,21 @@ $id = $_GET["id"];
 
 
 
-//this api is responible of selecting a quote form the uqotes table whose id
-//is the random number generated in the front end
-//it then returns the uqote to the front end
-$query = "SELECT * FROM quotes WHERE quote_id = ?";
+//we simply get all the milestones from the goals_milestones table
+
+$query = "SELECT * FROM goals_milestones";
 $stmt = $connection->prepare($query);
-$stmt->bind_param("i", $id);
 $stmt->execute();
 $results = $stmt->get_result();
-$row = $results->fetch_assoc();
-
+$rows=[];
+while($row = $results->fetch_assoc()){
+    $rows[]=$row;
+};
 $stmt->close();
 $connection->close();
     
 
-    $json = json_encode($row);
+    $json = json_encode($rows);
     echo $json;
 
 

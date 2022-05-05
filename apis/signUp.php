@@ -13,7 +13,8 @@ $email = $data->Email;
 $password = hash("sha256", $data->Password);
 
 
-
+//after receiving both the user's info form the fornt end
+//we check if a user with the same email already exists in the database
 $query = "SELECT * FROM users WHERE email = ?";
 $stmt = $connection->prepare($query);
 $stmt->bind_param("s", $email);
@@ -24,6 +25,9 @@ $stmt->close();
 if(!empty($row)) {
     echo "";
 } else {
+
+    //if no user with the same email exists in the database, we insert the new user who ccan
+    //now successfully log in
     $query = "INSERT INTO users(first_name,last_name,email,password) VALUES (?,?,?,?)";
     $stmt = $connection->prepare($query);
     $stmt->bind_param("ssss", $first_name,$last_name,$email,$password);

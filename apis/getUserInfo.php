@@ -11,7 +11,8 @@ $data = json_decode(file_get_contents("php://input"));
 
 $email = $_GET["email"];
 
-
+//this pai retrieves all the info related to the logged in user based on the
+//email they used upon logging in
 $query = "SELECT * FROM users WHERE email = ?";
 $stmt = $connection->prepare($query);
 $stmt->bind_param("s", $email);

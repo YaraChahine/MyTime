@@ -10,10 +10,12 @@ $data = json_decode(file_get_contents("php://input"));
 
 
 $email = $data->Email;
-$_SESSION["email"]=$email;
-
 $password = hash("sha256", $data->Password);
 
+
+//this api retrieves the email and password from a user trying to log in after hashing the password of course
+//if an entry with that email and password is found in the database
+//the email is returned to the front end
 $query = "SELECT * FROM users WHERE email = ? AND password=?";
 $stmt = $connection->prepare($query);
 $stmt->bind_param("ss", $email,$password);

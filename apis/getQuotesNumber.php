@@ -9,7 +9,8 @@ $data = json_decode(file_get_contents("php://input"));
 
 
 
-
+//this api simply returns the number of quote entries in the quotes table and returns it
+//to the front end
 $query = "SELECT count(*) FROM quotes;";
 $stmt = $connection->prepare($query);
 $stmt->execute();
