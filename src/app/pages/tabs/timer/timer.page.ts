@@ -10,6 +10,11 @@ import {ElementRef, ViewChild} from '@angular/core';
 })
 
 
+
+//this page is a timer which really just takes the hours and imnutes and seconds from the user and starts the timer
+//it stops when it reaches 0,
+// it can be paused and resumed
+
 export class TimerPage implements OnInit {
    hours  :any; 
    minutes:number; 
@@ -37,7 +42,7 @@ export class TimerPage implements OnInit {
 
   async startTimer(){
     clearInterval(this.t);
-
+//the user must enter correct values for the hours, minutes and seconds
     if (this.hours>24 || this.hours<0){
       const toast = await this.toastController.create({
         message: 'Caution : Please enter an Hour value between 0 and 24. ',
