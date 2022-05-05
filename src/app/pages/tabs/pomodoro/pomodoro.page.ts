@@ -17,6 +17,7 @@ export class PomodoroPage implements OnInit {
 
   ngOnInit() {
     this.getGoals();
+    this.getMilestones();
   }
 
 
@@ -37,6 +38,17 @@ export class PomodoroPage implements OnInit {
       console.log("SUCCESS get goals");
     },(error:any)=>{
       console.log("Error get goals");
+    })
+  }
+
+  
+    
+  getMilestones(){
+    this.service.getMilestones(localStorage.getItem("logged-in-user-id")).subscribe((res:any)=>{
+      this.milestones=res;
+      console.log("SUCCESS get milestones");
+    },(error:any)=>{
+      console.log("Error get milestones");
     })
   }
   }

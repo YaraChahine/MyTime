@@ -97,4 +97,9 @@ export class MyAPIsService {
     return this.http.get(this.url + 'getGoals.php?id='+id);
 
   }
+
+  getMilestones(id : any) {
+    return this.http.get(this.url + 'getMilestones.php?id='+id);
+
+  }
 }
