@@ -34,6 +34,10 @@ const routes: Routes = [
       } 
     ]
   },
+  {
+    path: 'add-goal',
+    loadChildren: () => import('./add-goal/add-goal.module').then( m => m.AddGoalPageModule)
+  },
  
  
 

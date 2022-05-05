@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { PomodoroPageRoutingModule } from './pomodoro-routing.module';
 
 import { PomodoroPage } from './pomodoro.page';
+import { AddGoalPage } from '../add-goal/add-goal.page';
 
 @NgModule({
   imports: [
@@ -15,6 +16,8 @@ import { PomodoroPage } from './pomodoro.page';
     IonicModule,
     PomodoroPageRoutingModule
   ],
-  declarations: [PomodoroPage]
+  declarations: [PomodoroPage,AddGoalPage],
+  entryComponents : [AddGoalPage]
+
 })
 export class PomodoroPageModule {}

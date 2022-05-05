@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>add-goal</ion-title>
+    <ion-buttons slot="end">
+      <ion-button color="new" (click)="dismissModal()"><strong>Close</strong></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="center">
+    <p class="t1">Your <span><strong class="t2">Goals</strong></span></p>
+
+    <form [formGroup]="ionicForm" (ngSubmit)="onSubmit()" novalidate>
+      <ion-label color="new" position="fixed"><strong>Goal Title:</strong></ion-label>
+
+      <ion-item class="rounded">
+        <ion-input formControlName="goal_title"></ion-input>
+
+      </ion-item>
+
+      <ion-label color="new" position="fixed"><strong>Goal Deadline:</strong></ion-label>
+
+      <ion-item class="rounded">
+        <ion-input formControlName="goal_deadline" type="date" ></ion-input>
+      </ion-item>
+
+      <ion-label color="new" position="fixed"><strong>Number of Milestones:</strong></ion-label>
+      <ion-item class="rounded">
+
+        <ion-select placeholder="Select One" (ionChange)="selectedType($event)" [(ngModel)]="item_type" 
+          [ngModelOptions]="{standalone: true}">
+          <ion-select-option value="1">1</ion-select-option>
+          <ion-select-option value="2">2</ion-select-option>
+          <ion-select-option value="3">3</ion-select-option>
+        </ion-select>
+
+      </ion-item>
+
+      <div *ngFor="let index of milestones_count">
+        <ion-label color="new" position="fixed"><strong>Milestone {{index+1}}:</strong></ion-label>
+
+        <ion-item class="rounded">
+          <ion-input  formControlName="goal_milestones{{index+1}}"></ion-input>
+        </ion-item>
+
+
+      </div>
+
+      <ion-button style="margin-top:30px;margin-bottom: 30px;" expand="block" color="new" type="submit"><span
+          style="color:white;">Add Goal</span></ion-button>
+
+
+      
+
+    </form>
+
+  </div>
+</ion-content>

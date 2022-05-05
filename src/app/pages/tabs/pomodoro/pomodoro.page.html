@@ -5,5 +5,33 @@
 </ion-header>
 
 <ion-content>
+  <div class="center">
+    <p class="t1">Your <span><strong class="t2">Goals</strong></span></p>
+    <ion-button (click)="openModal()" class="add-button" color="new"><span>Add a goal</span></ion-button>
 
+    <br>
+    <div  style="width:100%;margin-left: -30px;" *ngFor="let goal of goals">
+    <ion-card class="goal-card">
+      <ion-card-header>
+        <ion-card-title>
+          {{goal.goal_title}}
+        </ion-card-title>
+        <ion-card-subtitle>
+          {{goal.goal_deadline}}
+        </ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-card>
+          <ion-card-header>
+            <ion-label>task</ion-label>
+            <ion-button style="margin-left: 80%;margin-top: -40px;" (click)="deleteTask(task.task_id)" fill="clear"
+              color="new">
+              <ion-icon slot="icon-only" name="checkbox-outline"></ion-icon>
+            </ion-button>
+          </ion-card-header>
+        </ion-card>
+      </ion-card-content>
+    </ion-card>
+  </div>
+  </div>
 </ion-content>

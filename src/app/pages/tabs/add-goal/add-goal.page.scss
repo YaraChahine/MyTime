@@ -36,24 +36,22 @@ ion-content {
     
 
   }
-  .errorLabel{
-    color: red;
-    font-size: 0.8rem;
-    margin-left: 10%;
-    margin-right: 10%;
-  
+
+
+
+
+  .rounded{
+    height: 40px;
+    padding-bottom:30px;
+    padding-right: 15px;
+    border-radius: 20px;
+    background-color: white;
+     // border: 2px solid #e4f1d2;
+     margin-top: 15px;
+      margin-left: 5%;
+      margin-right: 5%;
+      margin-bottom: 9px;
+      box-shadow: 2px 2px 2px rgb(226, 210, 210);
   }
 
-  .add-button {
-      margin-top: -20px;
 
-      span {
-          color: white;
-          font-weight: 500;
-      }
-  }
-
-
-  .goal-card {
-    width: 100%;
-  }

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient} from '@angular/common/http';
+import { AnyForUntypedForms } from '@angular/forms';
 
 let getID = '';
 export interface User{
@@ -10,6 +11,16 @@ export interface User{
   Password: string;
 }
 
+export interface Goal{
+  goal_id?:any;
+  user_id: any;
+  goal_title:   string    ;
+  goal_deadline:   any ;
+  goal_milestones1: any;
+  goal_milestones2: any;
+  goal_milestones3: any;
+
+}
 
 
 @Injectable({
@@ -75,6 +86,15 @@ export class MyAPIsService {
 
   getRandomSong(id){
     return this.http.get(this.url + 'getRandomSong.php?id='+id);
+
+  }
+
+  addGoal(goal: Goal){
+    return this.http.post(this.url + 'addGoal.php', goal);
+  }
+
+  getGoals(id : any) {
+    return this.http.get(this.url + 'getGoals.php?id='+id);
 
   }
 }
