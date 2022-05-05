@@ -20,6 +20,8 @@ export class TabsPage implements OnInit {
   }
 
 
+
+  //responsible of opening the page linked to the tab button selected
   setCurrentTab(event){
     console.log(event);
     this.selectTab= this.tabs.getSelected();

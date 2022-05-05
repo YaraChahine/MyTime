@@ -26,6 +26,8 @@ export class AddGoalPage implements OnInit {
     });
   }
 
+
+  //since this is a modal, the "back" button calls the following page to simply close the modal
   dismissModal(){
     this.modalCtrl.dismiss();
   }
