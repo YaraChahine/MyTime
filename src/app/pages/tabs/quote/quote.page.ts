@@ -9,6 +9,9 @@ import { MyAPIsService } from 'src/app/services/my-apis.service';
 export class QuotePage implements OnInit {
 
 
+
+  //this page displays a randomly generated quote everyday
+
   date : any;
   quotes_count: any;
   random_quote: any;
@@ -22,6 +25,7 @@ export class QuotePage implements OnInit {
   }
 
 
+  //this function simply saves today's date in the correct formate into the "date" variable
 
 getDate(){
   let currentDate = new Date();
@@ -33,6 +37,7 @@ this.date=cDay+"/"+cMonth+"/"+cYear;
 
 }
 
+//this function calls the getQuotesNumber api to know how many quotes exist in the database
 
 getQuotesCount(){
   this.service.getQuotesNumber().subscribe((res:any)=>{
@@ -47,6 +52,11 @@ getQuotesCount(){
   })
 }
 
+
+
+//after retrieving the number of quotes in the database with the function above, we are interested in getting a 
+//random quote whose id is a random number between 0 and the number of quote in the table.
+//if the api request is successful, we save the song info into the "random _quote" variable.
 getRandomQuote(){
   var rand_index=Math.floor(Math.random() * (this.quotes_count+1));
 
